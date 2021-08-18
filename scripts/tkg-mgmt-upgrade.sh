@@ -14,4 +14,9 @@ export KUBECONFIG=${MGMT_CLUSTER_KUBECONFIG_PATH}
 rm -rf ~/.tanzu/tkg/bom
 export TKG_BOM_CUSTOM_IMAGE_TAG="v1.3.1-patch1"
 tanzu management-cluster create || ls
+
+tanzu cluster list --include-management-cluster
+
+tanzu management-cluster upgrade --yes
+
 tanzu management-cluster get
